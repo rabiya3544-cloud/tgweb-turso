@@ -138,7 +138,7 @@ async function handleWrite(req) {
   if (ops.length > 50) return jsonResponse({ ok: false, error: 'Too many ops (max 50)' }, 400);
 
   const host  = process.env.TURSO_HOST;
-  const token = process.env.TURSO_WRITE_TOKEN;
+  const token = process.env.TURSO_TOKEN;
   if (!host || !token) return jsonResponse({ ok: false, error: 'Server misconfigured: TURSO_WRITE_TOKEN missing' }, 500);
 
   const prepared = [];
